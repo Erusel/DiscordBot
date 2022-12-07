@@ -2,6 +2,7 @@ package fr.erusel;
 
 import fr.erusel.commands.NewsCommand;
 import fr.erusel.commands.TicketCommand;
+import fr.erusel.listeners.JoinLeaveListener;
 import fr.erusel.managers.ConfigManager;
 import fr.erusel.managers.TicketManager;
 import net.dv8tion.jda.api.JDA;
@@ -27,6 +28,7 @@ public class Main {
                 .addEventListeners(new NewsCommand())
                 .addEventListeners(new TicketCommand())
                 .addEventListeners(new TicketManager())
+                .addEventListeners(new JoinLeaveListener())
                 .build();
 
         jda.updateCommands().addCommands(
